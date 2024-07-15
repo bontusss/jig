@@ -1,9 +1,13 @@
 package jig
 
+import "github.com/bontusss/jig/log"
+
 type Jig struct {
 	AppName string
 	Version string
+	// The Debug flag indicates whether the application should run in debug mode or not.
 	Debug   bool
+	Logger *log.Logger
 }
 
 // initPaths is used when initializing the application. It holds the root
