@@ -40,7 +40,7 @@ func (g *Jig) New(rootPath string) error {
 func (g *Jig) Init(p initPaths) error {
 	root := p.rootPath
 	for _, path := range p.folderNames {
-		err := g.CreateDirIfNotExist(root + "/" + path)
+		err := g.createDirIfNotExist(root + "/" + path)
 		if err != nil {
 			return err
 		}

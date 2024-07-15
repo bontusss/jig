@@ -8,6 +8,7 @@ type Jig struct {
 	// The Debug flag indicates whether the application should run in debug mode or not.
 	Debug   bool
 	Logger *log.Logger
+	Handlers []string
 }
 
 // initPaths is used when initializing the application. It holds the root
