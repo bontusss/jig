@@ -1,4 +1,4 @@
-package goji
+package jig
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 // CreateDirIfNotExist creates a new directory if it does not exist
-func (g *Goji) CreateDirIfNotExist(path string) error {
+func (g *Jig) CreateDirIfNotExist(path string) error {
 	const mode = 0755
 	if _, err := os.Stat(path); os.IsNotExist(err) {
 		err := os.Mkdir(path, mode)
@@ -19,7 +19,7 @@ func (g *Goji) CreateDirIfNotExist(path string) error {
 }
 
 // CreateFileIfNotExists creates a new file at path if it does not exist
-func (g *Goji) CreateFileIfNotExists(path string) error {
+func (g *Jig) CreateFileIfNotExists(path string) error {
 	var _, err = os.Stat(path)
 	if os.IsNotExist(err) {
 		var file, err = os.Create(path)
@@ -34,7 +34,7 @@ func (g *Goji) CreateFileIfNotExists(path string) error {
 	return nil
 }
 
-func (g *Goji) checkDotEnv(path string) error {
+func (g *Jig) checkDotEnv(path string) error {
 	err := g.CreateFileIfNotExists(fmt.Sprintf("%s/.env", path))
 	if err != nil {
 		return err

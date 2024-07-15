@@ -1,4 +1,4 @@
-package goji
+package jig
 
 const (
 	VERSION = "1.0.0"
@@ -15,9 +15,9 @@ var projectFolders = []string{
 	"logs",
 }
 
-// New reads the .env file, creates our application config, populates a goji app with settings
+// New reads the .env file, creates our application config, populates a Jig app with settings
 // based on .env values, and creates necessary folders and files if they don't exist
-func (g *Goji) New(rootPath string) error {
+func (g *Jig) New(rootPath string) error {
 	g.Version = VERSION
 	pathConfig := initPaths{
 		rootPath:    rootPath,
@@ -36,8 +36,8 @@ func (g *Goji) New(rootPath string) error {
 	return nil
 }
 
-// Init creates necessary folders for a Goji application
-func (g *Goji) Init(p initPaths) error {
+// Init creates necessary folders for a Jig application
+func (g *Jig) Init(p initPaths) error {
 	root := p.rootPath
 	for _, path := range p.folderNames {
 		err := g.CreateDirIfNotExist(root + "/" + path)

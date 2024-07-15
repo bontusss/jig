@@ -1,6 +1,6 @@
-package goji
+package jig
 
-type Goji struct {
+type Jig struct {
 	AppName string
 	Version string
 	Debug   bool
